@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+<script src="../vendor/jquery/jquery.js"></script>
+<script src="../vendor/jquery-ui/jquery-ui.js"></script>
+<script src="../dist/b-nested-sortable.js"></script>
+<body>
+	<figure style="max-width: 500px;margin: 70px auto;">
+		<ol class="b-sortable b-sortable-success">
+
+		</ol>
+	</figure>
+	<button id="add" type="button" class="btn btn-success">Add item</button>
+	<button id="get-data" type="button" class="btn btn-primary">Get data</button>
+	<script>
+	var data = [
+		{
+			id : 1,
+			parentID : 5,
+			content : 'Giày thể thao'
+		},
+		{
+			id : 2,
+			parentID : 0,
+			content : 'Giày bóng đá'
+		},
+		{
+			id : 3,
+			parentID : 0,
+			content : 'Giày da'
+		},
+		{
+			id : 4,
+			parentID : 3,
+			content : 'Giày việt nam'
+		},
+		{
+			id : 5,
+			parentID : 4,
+			content : 'Giày Mỹ'
+		},
+		{
+			id : 6,
+			parentID : 5,
+			content : 'Giày tốt mũi cao'
+		}
+	];
+	var menu = null;
+	var i = 99;
+	$(document).ready(function(){
+		var config = {
+			bdata : data,
+			forcePlaceholderSize: true,
+			opacity: .6,
+			placeholder: 'placeholder',
+			revert: 250,
+			tabSize: 25,
+			tolerance: 'pointer',
+			isTree: true,
+			expandOnHover: 700,
+			startCollapsed: false
+		}
+		menu = $('.b-sortable').bNestedSortable(config);
+				
+		$('#add').click(function(){
+			i++;
+			var item = {
+					id : i,
+					parentID : 0,
+					content : 'Item ' + i
+			}
+			menu.addItem(item);	
+		});
+
+		$('#get-data').click(function(){
+			console.log(menu.getData());
+		});
+		
+	});
+	</script>
+</body>

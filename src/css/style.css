@@ -1,0 +1,44 @@
+/*MAIN*/
+.b-sortable, .b-sortable li {
+    list-style: none;
+    padding: 0;
+    line-height: 1.5;
+}
+.b-sortable li > div {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+	color: #fff;
+    padding: 10px;
+    cursor: move;
+}
+.b-menu-delete {
+    float: right;
+    margin-right: 10px;
+    background-color: rgb(140, 206, 140);
+    opacity: .5;
+    color: #36a736;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+/*BRAND COLOR*/
+.b-sortable-success li > div {
+    background-color: #5cb85c;   
+}
+.b-sortable-danger li > div {
+    background-color: #D9534F;   
+}
+.b-sortable-warning li > div {
+    background-color: #2B3E50;   
+}
+.b-sortable-info li > div {
+    background-color: #2B3E50;   
+}
+.b-sortable-primary li > div {
+    background-color: #375A7F;   
+}
+.b-sortable-default li > div {
+    background-color: #4E5D6C;   
+}
