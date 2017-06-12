@@ -8,8 +8,18 @@
 
 		</ol>
 	</figure>
-	<button id="add" type="button" class="btn btn-success">Add item</button>
-	<button id="get-data" type="button" class="btn btn-primary">Get data</button>
+	<div class="container">
+		<div class=row>
+			<div class="col-md-12">
+				<p>
+				<button id="add" type="button" class="btn btn-success">Add item</button>
+				<button id="get-data" type="button" class="btn btn-primary">Get data</button>
+				</p>
+				<div class="alert alert-success" style="display:none" id="alert"></div>
+			</div>
+		</div>
+	</div>
+	
 	<script>
 	var data = [
 		{
@@ -72,6 +82,8 @@
 
 		$('#get-data').click(function(){
 			console.log(menu.getData());
+			$("#alert").slideDown();
+			$("#alert").text("Done! please view console log");
 		});
 		
 	});
